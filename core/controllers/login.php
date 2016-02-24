@@ -7,7 +7,12 @@ if(!$pageid){
 	
 	$language['login'] = $template -> LoadLanguageFile('login');
 	$account = Auth::AuthenticateUser(GetPost('login_username'), GetPost('login_password'));
-	if($account)
-		HBBSetCookie('hbb', $account, time() + 3600);
+	if($account){
+		if(!GetPost('login_remember'))
+			HBBSetCookie('hbb', $account, time() + 3600);
+		else
+			HBBSetCookie('hbb', $account, time() + 62208000);
+		Redirect('index.php');
+	}
 }
 ?>

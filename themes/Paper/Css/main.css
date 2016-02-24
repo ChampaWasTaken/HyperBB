@@ -60,8 +60,17 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 	border-bottom: 1px solid #1976d2;
 }
 
+[type="checkbox"].filled-in:checked+label:after{
+	background: #1976d2;
+	border-color: #1976d2;
+}
+
 .input-field .prefix.active{
 	color: #1976d2;
+}
+
+.cancelBottomMargin{
+	margin-bottom: 0;
 }
 
 @media only screen and (max-width: 992px){

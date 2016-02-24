@@ -9,14 +9,14 @@
 			{if $failedLogin}
 				<h4 class="errorOnLogin">{$language['login_error']}</h4>
 			{/if}
-			<div class="row">
+			<div class="row cancelBottomMargin">
 				<div class="input-field col s12">
 					<i class="fa fa-user prefix"></i>
 					<input id="login_username" name="login_username" type="text" class="validate">
 					<label for="login_username">{$language['login_username']}</label>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row cancelBottomMargin">
 				<div class="input-field col s12">
 					<i class="fa fa-key prefix"></i>
 					<input id="login_password" name="login_password" type="password" class="validate">
@@ -24,6 +24,10 @@
 				</div>
 			</div>
 			
+			<input type="checkbox" class="filled-in" id="login_remember" name="login_remember" checked="checked" />
+			<label for="login_remember">{$language['login_remember']}</label>
+			<br/>
+			<br/>
 			<button class="btn waves-effect waves-light" type="submit" name="login_submit">Sign in
 				<i class="fa fa-sign-in"></i>
 			</button>
