@@ -8,8 +8,8 @@ class User{
 	
 	public function loadData(){
 		global $db;
-		$db -> query = "SELECT name, member_group, notifications FROM users WHERE hbbid = '". $this -> uniqueId ."' LIMIT 1";
-		return $db -> TQuery();
+		$q = "SELECT name, member_group, notifications FROM ". $db -> prefix ."users WHERE hbbid = '". $this -> uniqueId ."' LIMIT 1";
+		return $db -> ReturnData($q);
 	}
 }
 ?>
