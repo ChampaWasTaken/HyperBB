@@ -3,7 +3,8 @@ class User{
 	public $uniqueId;
 	
 	public function __construct($uniqueId){
-		$this -> uniqueId = $uniqueId;
+               global $db;
+		$this -> uniqueId = $db -> SafeString($uniqueId);
 	}
 	
 	public function loadData(){
