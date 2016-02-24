@@ -67,7 +67,7 @@ class Database{
 				$site_data = $get -> fetch_array(MYSQLI_ASSOC);
 				return $site_data;
 			}
-		} else if($more) {
+		} else {
 			$get = $con -> query($q); $count = 0;
 			if(!$get) { return false; }
 			if($q -> num_rows > 0){
