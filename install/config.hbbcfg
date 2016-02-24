@@ -1,0 +1,25 @@
+<?php
+require ("core/database/db_type.php");
+
+#Database setup
+$database['type']		=		'db_type';
+$database['server']		=		'db_server';
+$database['user']		=		'db_user';
+$database['password']	=		'db_password';
+$database['database']	=		'db_database';
+$database['prefix']		=		'db_prefix';
+
+#Community info
+$forum['name']			=		'forum_name';
+$forum['base_url']		=		'forum_base_url';
+$forum['timezone']		=		'forum_timezone';
+
+#Some forum settings
+$settings['tempPath']	=		'themes/';
+$settings['langPath']	=		'languages/';
+$settings['underdev']	=		true;
+
+$db = new Database($database['server'], $database['user'], $database['password'], $database['database'], $database['prefix']);
+
+$con = $db -> CreateConnection();
+?>
