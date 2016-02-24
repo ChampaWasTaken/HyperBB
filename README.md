@@ -1,4 +1,4 @@
-# hyperbb
+#Hyper Bulletin Board
 A new and fully customizable forum software
 It is written in PHP 5.6 and MySQL (also supports SQLite)
 
