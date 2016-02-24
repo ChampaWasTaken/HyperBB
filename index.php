@@ -32,8 +32,7 @@ $template 	= 	new Template($settings['tempPath'], $settings['langPath'], $smarty
 
 #Load the user from the database (if he is logged in)
 if(GetCookie('hbb')){
-	$uid = $db -> SafeString(GetCookie('hbb'));
-	$userClass = new User($uid);
+	$userClass = new User(GetCookie('hbb'));
 	$user = $userClass -> loadData();
 }
 
