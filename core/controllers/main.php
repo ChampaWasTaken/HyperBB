@@ -11,31 +11,33 @@ $template -> LoadJavascript('main');
 
 #Also the real header because it's shown on every page :)
 $language['header'] = $template -> LoadLanguageFile('header');
-$header_array = array(
+$template -> LoadTemplateFile('header', 'header', [
 	'themePath'		=>		$template -> templatePath . $template -> theme . '/',
 	'language'		=>		$language['header'],
 	'userMenu'		=>		CreateUserMenu()
-);
-$template -> LoadTemplateFile('header', 'header', $header_array);
+]);
 
 switch($page){
 	case 'login':
 		if(!$pageid)
-			$template -> LoadTemplateFile('login', 'login', array(
+			$template -> LoadTemplateFile('login', 'auth', [
 				'language'		=>		$language['login'],
 				'failedLogin'	=>		false
-			));
+			]);
 		else if(!$account)
-			$template -> LoadTemplateFile('login', 'login', array(
+			$template -> LoadTemplateFile('login', 'auth', [
 				'language'		=>		$language['login'],
 				'failedLogin'	=>		true
-			));
+			]);
 	break;
 	
-	case 'logout':
-		if($uid){
-			
-		}
+	case 'register':
+		$language['registration'] = $template -> LoadLanguageFile('register');
+		SetPageTitle($forum['name'] . ' | ' . $language['registration']['page_title']);
+		$template -> LoadTemplateFile('register', 'auth', [
+			'language'		=>		$language['registration'],
+			'failedLogin'	=>		false
+		]);
 	break;
 	
 	default:

@@ -28,7 +28,7 @@
 			<label for="login_remember">{$language['login_remember']}</label>
 			<br/>
 			<br/>
-			<button class="btn waves-effect waves-light" type="submit" name="login_submit">Sign in
+			<button class="btn waves-effect waves-light" type="submit" name="login_submit">{$language['login_button']}
 				<i class="fa fa-sign-in"></i>
 			</button>
 		</form>

@@ -44,6 +44,7 @@ switch($step){
 	break;
 	
 	case 4:
+		require ("core/classes/main.class.php");
 		require ("install/install.class.php");
 		$configData = array(
 			'db_type'		=>		GetPost('db_type'),
@@ -67,6 +68,7 @@ switch($step){
 	break;
 	
 	case 5:
+		require ("core/classes/main.class.php");
 		require ("install/install.class.php");
 		$configData = array(
 			'forum_name'		=>		GetPost('community_name'),
@@ -78,6 +80,7 @@ switch($step){
 	break;
 	
 	case 6:
+		require ("core/classes/main.class.php");
 		require ("install/install.class.php");
 		require ("config.php");
 		$adminData = array(

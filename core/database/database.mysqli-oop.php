@@ -40,7 +40,7 @@ class Database{
 		return $con -> query($q);
 	}
 	
-	public function CountResult($q){
+	public function CountRows($q){
 		global $con;
 		return $q -> num_rows;
 	}
@@ -67,7 +67,7 @@ class Database{
 				$site_data = $get -> fetch_array(MYSQLI_ASSOC);
 				return $site_data;
 			}
-		} else {
+		} else if($more) {
 			$get = $con -> query($q); $count = 0;
 			if(!$get) { return false; }
 			if($q -> num_rows > 0){

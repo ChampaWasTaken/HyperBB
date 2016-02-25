@@ -24,6 +24,7 @@ if($settings['underdev']) {
 require ("external/libs/Smarty.class.php");
 require ("core/classes/template.class.php");
 require ("core/classes/user.class.php");
+require ("core/classes/main.class.php");
 require ("core/menu.php");
 
 #Initialize our classes
@@ -32,7 +33,8 @@ $template 	= 	new Template($settings['tempPath'], $settings['langPath'], $smarty
 
 #Load the user from the database (if he is logged in)
 if(GetCookie('hbb')){
-	$userClass = new User(GetCookie('hbb'));
+	$uid = $db -> SafeString(GetCookie('hbb'));
+	$userClass = new User($uid);
 	$user = $userClass -> loadData();
 }
 
