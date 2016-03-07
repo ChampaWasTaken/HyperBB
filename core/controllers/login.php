@@ -6,6 +6,7 @@ if(!$pageid){
 	require ("core/classes/auth.class.php");
 	
 	$language['login'] = $template -> LoadLanguageFile('login');
+	SetPageTitle($forum['name'] . ' | ' . $language['login']['page_title']);
 	$account = Auth::AuthenticateUser(GetPost('login_username'), GetPost('login_password'));
 	if($account){
 		if(!GetPost('login_remember'))

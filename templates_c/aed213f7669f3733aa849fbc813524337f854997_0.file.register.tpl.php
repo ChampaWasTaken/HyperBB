@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-25 18:58:10
+/* Smarty version 3.1.29, created on 2016-02-26 16:09:59
   from "C:\xampp\htdocs\hbb\themes\Paper\register.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56cf40b279feb4_86126547',
+  'unifunc' => 'content_56d06ac7099fd8_91947791',
   'file_dependency' => 
   array (
     'aed213f7669f3733aa849fbc813524337f854997' => 
     array (
       0 => 'C:\\xampp\\htdocs\\hbb\\themes\\Paper\\register.tpl',
-      1 => 1456423077,
+      1 => 1456499161,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56cf40b279feb4_86126547 ($_smarty_tpl) {
+function content_56d06ac7099fd8_91947791 ($_smarty_tpl) {
 ?>
 <div class="wrapper">
 	<div class="container">
@@ -30,7 +30,7 @@ function content_56cf40b279feb4_86126547 ($_smarty_tpl) {
 </h2>
 		</div>
 		
-		<form class="loginForm col s12" action="index.php?page=register&id=success" method="POST">
+		<form class="loginForm col s12" action="index.php?page=register&id=continue" method="POST">
 			<div class="row cancelBottomMargin">
 				<div class="input-field col s12">
 					<i class="fa fa-user prefix"></i>
@@ -66,7 +66,8 @@ function content_56cf40b279feb4_86126547 ($_smarty_tpl) {
 </label>
 				</div>
 			</div>
-			
+			<p onclick="ToggleDialog(true, '<?php echo $_smarty_tpl->tpl_vars['agreement']->value;?>
+');">By clicking 'sign up' you agree to the <u>community rules</u></p>
 			<button class="btn waves-effect waves-light" type="submit" name="login_submit"><?php echo $_smarty_tpl->tpl_vars['language']->value['register_button'];?>
 
 				<i class="fa fa-sign-in"></i>

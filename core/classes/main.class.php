@@ -39,5 +39,16 @@ class Main{
 		if(strpos($email, '@') === false || strpos($email, '.') === false) return false;
 		else return true;
 	}
+	
+	/*
+		* With this, we can sanitaze input so it can be passed to javascript functions
+		
+		* @param $string - the string we want to sanitaze
+		* @return - sanitazed string
+	*/
+	
+	public static function SanitazeInputForJs($string){
+		return str_replace("\r\n", "", $string);
+	}
 }
 ?>

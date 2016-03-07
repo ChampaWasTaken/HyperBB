@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-25 18:59:58
+/* Smarty version 3.1.29, created on 2016-02-26 15:57:03
   from "C:\xampp\htdocs\hbb\themes\Paper\login.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56cf411e05c0e6_87147098',
+  'unifunc' => 'content_56d067bf6d3246_60891894',
   'file_dependency' => 
   array (
     'e197a7d7457815f1cffd45d897584c661e947e5d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\hbb\\themes\\Paper\\login.tpl',
-      1 => 1456423142,
+      1 => 1456437109,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56cf411e05c0e6_87147098 ($_smarty_tpl) {
+function content_56d067bf6d3246_60891894 ($_smarty_tpl) {
 ?>
 <div class="wrapper">
 	<div class="container">

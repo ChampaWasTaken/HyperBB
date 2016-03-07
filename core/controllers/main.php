@@ -3,7 +3,10 @@
 require ("core/controllers/headers.php");
 
 #Lets load the <head/> file
-$template -> LoadTemplateFile('head');
+$template -> LoadTemplateFile('head', NULL, [
+	'theme'				=>		$template -> theme,
+	'language'		=>		$template -> language
+]);
 
 #Then maybe include the main css and javascript file
 $template -> LoadCss('main');
@@ -18,6 +21,10 @@ $template -> LoadTemplateFile('header', 'header', [
 ]);
 
 switch($page){
+	case 'board':
+		
+	break;
+	
 	case 'login':
 		if(!$pageid)
 			$template -> LoadTemplateFile('login', 'auth', [
@@ -32,17 +39,57 @@ switch($page){
 	break;
 	
 	case 'register':
-		$language['registration'] = $template -> LoadLanguageFile('register');
-		SetPageTitle($forum['name'] . ' | ' . $language['registration']['page_title']);
-		$template -> LoadTemplateFile('register', 'auth', [
-			'language'		=>		$language['registration'],
-			'failedLogin'	=>		false
-		]);
+		if(!$pageid){
+			$language['registration'] = $template -> LoadLanguageFile('register');
+			SetPageTitle($forum['name'] . ' | ' . $language['registration']['page_title']);
+			$agreement = Main::SanitazeInputForJs(read_File('agreement.hbb'));
+			$template -> LoadTemplateFile('register', 'auth', [
+				'language'		=>		$language['registration'],
+				'agreement'		=>		$agreement
+			]);
+		} else if($pageid == 'continue') {
+			require ("core/classes/register.class.php");
+			$agreement = Main::SanitazeInputForJs(read_File('agreement.hbb'));
+			$language['registration'] = $template -> LoadLanguageFile('register');
+			SetPageTitle($forum['name'] . ' | ' . $language['registration']['page_title']);
+
+			$registerState = Registration::RegisterUser([
+				'username'		=>		GetPost('register_username'),
+				'email'			=>		GetPost('register_email'),
+				'password'		=>		GetPost('register_password'),
+				'password2'		=>		GetPost('register_password2')
+			]);
+
+			$template -> LoadTemplateFile('registerContinue', 'auth', [
+				'language'		=>		$language['registration'],
+				'regStatus'		=>		$registerState,
+				'agreement'		=>		$agreement
+			]);
+		}
 	break;
-	
+
 	default:
 		SetPageTitle($forum['name']);
-		$template -> LoadTemplateFile('index');
+		require ("core/classes/forum.class.php");
+		$forum = new Forum();
+		$language['boards'] = $template -> LoadLanguageFile('boards');
+		$categories = $forum -> LoadCategories();
+		$cShfl = explode("|", GetCookie('cshfl'));
+		foreach($cShfl as $catId)
+			if(isset($catId))
+				$catShuffle[$catId] = true;
+
+		foreach($categories as $category)
+			$boards[$category['category_id']] = $forum::LoadBoards($category['category_id']);
+
+		$template -> LoadTemplateFile('boards', 'boards', [
+			'themePath'		=>		$template -> templatePath . $template -> theme . '/',
+			'language'		=>		$language['boards'],
+			'categories'	=>		$forum -> LoadCategories(),
+			'boards'		=>		$boards,
+			'catShuffle'	=>		$catShuffle
+		]);
+
 	break;
 }
 ?>

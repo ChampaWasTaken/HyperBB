@@ -57,7 +57,7 @@ switch($step){
 		Installation::CreateConfigFile($configData);
 		require ("config.php");
 		
-		Installation::CreateDatabase();
+		//Installation::CreateDatabase();
 		
 		$utc = new DateTimeZone('UTC');
 		$dt = new DateTime('now', $utc);

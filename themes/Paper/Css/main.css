@@ -14,8 +14,8 @@ body{
 	background-color: white;
 	border-radius: 0 0 2px 2px;
 	padding: 10px;
-	box-shadow: 0px 9px 17px rgba(0,0,0,0.2); 
-	-webkit-box-shadow: 0px 9px 17px rgba(0,0,0,0.2); 
+	box-shadow: 0px 9px 17px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 9px 17px rgba(0,0,0,0.2);
 	-moz-box-shadow: 0px 9px 17px rgba(0,0,0,0.2);
 }
 
@@ -73,12 +73,103 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 	margin-bottom: 0;
 }
 
+.blackOutMenu .popUpBox .closeButton{
+	border-radius: 100%;
+	width: 31px;
+	height: 31px;
+	border: 0;
+	background: #263238;
+	color: white;
+	position:  absolute;
+	right:  0;
+	top:  0;
+	margin-top: -15px;
+	margin-right: -16px;
+}
+
+.blackOutMenu .popUpBox{
+	background: white;
+	border-radius: 2px;
+	padding: 10px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	width: 600px;
+	height: 400px;
+}
+
+.blackOutMenu{
+	background: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 999;
+	overflow: hidden;
+}
+
+.userCardProfile{
+	position: absolute;
+	background: white;
+	width: 320px;
+	height: 445px;
+	z-index: 10000;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.userCardProfile .pmsection{
+	text-align: center;
+	margin-top: 10px;
+}
+
+.userCardProfile .cover{
+	width: 320px;
+	height: 200px;
+}
+
+.userCardProfile .avatar{
+	width: 86px;
+	height: 86px;
+	position: absolute;
+	border-radius: 100%;
+	margin-top: -60px;
+	margin-left: 10px;
+	z-index: 2;
+}
+
+.userCardProfile h2 a{
+	color: white;
+}
+
+.userCardProfile h2{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	text-align: left;
+	font-size: 22px;
+	margin-top: -24px;
+	padding-left: 100px;
+	width: 320px;
+}
+
+.userCardProfile table{
+	margin-top: 30px;
+}
+
 @media only screen and (max-width: 992px){
 	.wrapper{
 		width: 100%;
 		padding: 0;
 	}
-	
+
 	.container{
 		margin-top: -70px;
 		border-radius: 2px;

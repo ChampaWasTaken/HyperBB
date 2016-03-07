@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-02-22 22:20:56
+/* Smarty version 3.1.29, created on 2016-03-05 23:10:56
   from "C:\xampp\htdocs\hbb\themes\Paper\header.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_56cb7bb8d20e01_83688506',
+  'unifunc' => 'content_56db59709b1248_29923333',
   'file_dependency' => 
   array (
     '6756f6d985689b27e6f8f71a66fc90530d789524' => 
     array (
       0 => 'C:\\xampp\\htdocs\\hbb\\themes\\Paper\\header.tpl',
-      1 => 1456087451,
+      1 => 1457213571,
       2 => 'file',
     ),
   ),
@@ -19,8 +19,20 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_56cb7bb8d20e01_83688506 ($_smarty_tpl) {
+function content_56db59709b1248_29923333 ($_smarty_tpl) {
 ?>
+<!-- Important parts, do not delete it-->
+<div id="blackOut" class="blackOutMenu" style="display: none;">
+
+	<div class="popUpBox z-depth-3" id="blackOutBox" style="display: none;">
+		<button onclick="ToggleDialog(false);" class="closeButton waves-effect waves-light z-depth-1"><i class="fa fa-times"></i></button>
+		<div id="blackOutBoxContent"></div>
+	</div>
+</div>
+<div id="blackOutCard" class="blackOutMenu" style="display: none;">
+	<div class="userCardProfile z-depth-3" id="userCardProfile"></div>
+</div>
+<!-- End of the important parts -->
 <a href="#" data-activates="sideBarMobile" class="button-collapse toggleMenu hide-on-large-only"><i class="fa fa-bars"></i></a>
 <header>
 	<h1>Hyper Bulletin Board</h1>
@@ -42,7 +54,7 @@ $_smarty_tpl->tpl_vars['link']->_loop = true;
 $__foreach_link_0_saved_local_item = $_smarty_tpl->tpl_vars['link'];
 ?>
 		<a href="<?php echo $_smarty_tpl->tpl_vars['link']->value;?>
-"><li><?php echo $_smarty_tpl->tpl_vars['item']->value;?>
+" class="waves-effect waves-dark"><li><?php echo $_smarty_tpl->tpl_vars['item']->value;?>
 </li></a>
 	<?php
 $_smarty_tpl->tpl_vars['link'] = $__foreach_link_0_saved_local_item;
@@ -93,5 +105,6 @@ $_smarty_tpl->tpl_vars['item'] = $__foreach_link_1_saved_key;
 		<a href="index.php" class="breadcrumb" title="Vi ste ovdje:"><i class="fa fa-home"></i> Zara Network</a>
 		<a href="index.php" class="breadcrumb" title="Vi ste ovdje:">das</a>
 	</div>
-</div>--><?php }
+</div>-->
+<?php }
 }

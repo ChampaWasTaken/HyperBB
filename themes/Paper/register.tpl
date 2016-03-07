@@ -5,7 +5,7 @@
 			<h2>{$language['page_description']}</h2>
 		</div>
 		
-		<form class="loginForm col s12" action="index.php?page=register&id=success" method="POST">
+		<form class="loginForm col s12" action="index.php?page=register&id=continue" method="POST">
 			<div class="row cancelBottomMargin">
 				<div class="input-field col s12">
 					<i class="fa fa-user prefix"></i>
@@ -37,7 +37,7 @@
 					<label for="register_password2">{$language['register_password2']}</label>
 				</div>
 			</div>
-			
+			<p onclick="ToggleDialog(true, '{$agreement}');">By clicking 'sign up' you agree to the <u>community rules</u></p>
 			<button class="btn waves-effect waves-light" type="submit" name="login_submit">{$language['register_button']}
 				<i class="fa fa-sign-in"></i>
 			</button>

@@ -1,0 +1,163 @@
+.category_wrap .toggleCategory{
+	float: right;
+	margin-right: 10px;
+	font-size: 21px;
+	cursor: pointer;
+}
+
+.category_wrap{
+	padding: 10px;
+}
+
+.category_wrap .category_title.inactive{
+	background: rgba(38, 50, 56, 0.5);
+	border-radius: 2px;
+}
+
+.category_wrap .category_title{
+	background: #263238;
+	color: white;
+	padding: 10px;
+	height: 40px;
+	font-size: 14.px;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.boardWrap{
+	min-height: 50px;
+}
+
+.boardWrap .titleWithDesc p{
+	margin: 0;
+	font-size: 13px;
+}
+
+.boardWrap .titleWithDesc h4.noDesc{
+	margin-top: 13px;
+}
+
+.boardWrap .titleWithDesc h4.withDesc{
+	margin-top: 10px;
+}
+
+.boardWrap .titleWithDesc h4 a{
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.boardWrap .titleWithDesc h4{
+	margin: 0;
+	font-size: 17px;
+	font-weight: bolder;
+}
+
+.boardWrap .titleWithDesc{
+	width: 60%;
+	float: left;
+	min-height: 50px;
+}
+
+.boardWrap .boardStat img{
+	width: 45px;
+	height: 45px;
+	border-radius: 100%;
+	margin-top: 3px;
+	float: left;
+	cursor: pointer;
+}
+
+.boardWrap .boardStat p strong{
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.boardWrap .boardStat p a:hover{
+	text-decoration: underline;
+}
+
+.boardWrap .boardStat p a{
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.boardWrap .boardStat p{
+	margin: 0;
+	font-size: 14px;
+	margin-top: 10px;
+	margin-left: 50px;
+	line-height: 15px;
+}
+
+.boardWrap .boardStat{
+	float: left;
+	width: 30%;
+	min-height: 50px;
+}
+
+.boardWrap .icon .fa{
+	margin-top: -1px;
+}
+
+.boardWrap .icon{
+	width: 50px;
+	float: left;
+	text-align: center;
+	font-size: 33px;
+}
+
+.mobileBoardsWrap{
+	display: none;
+}
+
+.mobileBoardsWrap .mobileCategoryTitle.inactive{
+	background: rgba(38, 50, 56, 0.5) !important;
+}
+
+.mobileCategoryTitle{
+	background: #263238 !important;
+	color: white !important;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+span.badge.new{
+	background: #1976d2;
+}
+
+.collection a.collection-item{
+	color: #263238;
+}
+
+@media only screen and (max-width: 992px){
+	.category_title{
+		display: none;
+	}
+
+	.boardWrap .titleWithDesc{
+		width: 100%;
+	}
+	
+	.boardWrap .icon{
+		display: none;
+	}
+	
+	.category_wrap .category_title{
+		font-size: 10px;
+		height: 35px;
+	}
+	
+	.category_wrap .toggleCategory{
+		display: none;
+	}
+	
+	.boardWrap{
+		display: none;
+	}
+	
+	.mobileBoardsWrap{
+		display: block;
+	}
+}

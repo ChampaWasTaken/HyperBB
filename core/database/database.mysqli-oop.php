@@ -25,6 +25,11 @@ class Database{
 		return $con;
 	}
 	
+	public function Error(){
+		global $con;
+		return $con -> errno;
+	}
+	
 	public function DestroyConnection(){
 		global $con;
 		$con -> close();
@@ -70,7 +75,7 @@ class Database{
 		} else if($more) {
 			$get = $con -> query($q); $count = 0;
 			if(!$get) { return false; }
-			if($q -> num_rows > 0){
+			if($get -> num_rows > 0){
 				while($sitedata = $get -> fetch_array(MYSQLI_ASSOC)){
 					$site_data[$count] = $sitedata;
 					$count ++;
