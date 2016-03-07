@@ -22,7 +22,15 @@ $template -> LoadTemplateFile('header', 'header', [
 
 switch($page){
 	case 'board':
-		
+		require ("core/classes/board.class.php");
+		$board = new Board($pageid);
+		$boardInfo = $board -> loadBoardData();
+		SetPageTitle($forum['name'] . ' | ' . $boardInfo['board_name']);
+		$language['boards'] = $template -> LoadLanguageFile('boards');
+		$template -> LoadTemplateFile('board', 'boards', [
+			'language'			=>		$language['boards'],
+			'boardInfo'			=>		$boardInfo
+		]);
 	break;
 	
 	case 'login':
