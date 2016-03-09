@@ -12,8 +12,7 @@ class Forum{
 		
 		$q = "SELECT 	". $db -> prefix ."categories.category_id, ". $db -> prefix ."categories.category_name,
 						". $db -> prefix ."categories.category_desc, ". $db -> prefix ."categories.category_groups	
-			FROM ". $db -> prefix ."categories
-			WHERE ". $db -> prefix ."categories.category_subforum = '". $this -> boardId ."'";
+			FROM ". $db -> prefix ."categories";
 			
 		return $db -> ReturnData($q, true);
 	}

@@ -22,6 +22,7 @@ $template -> LoadTemplateFile('header', 'header', [
 
 switch($page){
 	case 'board':
+		require ("core/classes/forum.class.php");
 		require ("core/classes/board.class.php");
 		$board = new Board($pageid);
 		$boardInfo = $board -> loadBoardData();
@@ -29,7 +30,9 @@ switch($page){
 		$language['boards'] = $template -> LoadLanguageFile('boards');
 		$template -> LoadTemplateFile('board', 'boards', [
 			'language'			=>		$language['boards'],
-			'boardInfo'			=>		$boardInfo
+			'boardInfo'			=>		$boardInfo,
+			'subboards'			=>		$board -> loadSubboards(),
+			'threads'			=>		$board -> loadThreads()
 		]);
 	break;
 	
